@@ -1,9 +1,12 @@
-s = raw_input("")
+#!/usr/bin/env python
 
+from math import *
+
+s = raw_input()
 ss = s.split(" ")
 n = int(ss[0])
-m = int(ss[1]);
-a = int(ss[2]);
+m = int(ss[1])
+a = int(ss[2])
 
 if (n < m):
     t = n
@@ -13,20 +16,11 @@ if (n < m):
 sum = 1
 top = 0
 if (n > a):
-    if (n % a == 0):
-        s = n / a
-    else:
-        s = n / a + 1
-    top = s
+    top = int(ceil(n * 1.0 / a))
     sum = top
 
 if (m > a):
-    m -= a
-    if (m % a == 0):
-        temp = m / a
-    else:
-        temp = m / a + 1
-    sum = sum + (temp * top)
-    
+    sum += top * (int(ceil((m * 1.0 - a) / a)))
 
 print sum
+
