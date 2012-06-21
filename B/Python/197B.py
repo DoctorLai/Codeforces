@@ -2,16 +2,15 @@
 
 from sys import stdin
 
-n, m = map(int, stdin.readline().split(" "))
+fun = lambda: map(int, stdin.readline().split(" "))
 
-a = map(int, stdin.readline().split(" "))
-b = map(int, stdin.readline().split(" "))
+n, m = fun()
+a = fun()
+b = fun()
 
 def gcd(a, b):
-    while b != 0:
-        t = a % b
-        a = b
-        b = t
+    while b:
+        a, b = b, a % b
     return a
 
 if n > m:
