@@ -15,8 +15,7 @@ if len(s2) == 0:
     s2.append(s1.pop())
 
 if len(s1) % 2 == 0:
-    if len(s2) > 0:
-        s3.append(s1.pop())
+    s3.append(s1.pop())
 
 pr(s1)
 pr(s2)
